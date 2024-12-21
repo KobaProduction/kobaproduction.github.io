@@ -1,4 +1,4 @@
-import React from "https://cdn.skypack.dev/react";
+import React, {useState, useEffect} from "https://cdn.skypack.dev/react";
 import {render} from "https://cdn.skypack.dev/react-dom";
 
 
@@ -40,12 +40,30 @@ function Navbar() {
     </nav>
 }
 
+function FingerprintInfo() {
+    const [fingerprint, setFingerprint] = useState(null)
+    useEffect(() => {
+        FingerprintJS.load().then(fp => fp.get().then(result => setFingerprint(result)))
+    }, []);
+    return <div className="row">
+        <h1>Fingerprint {!fingerprint ? "" : `(v${fingerprint.version})`}</h1>
+        {
+            !fingerprint ? <p>Loading fingerprint...</p> :
+                <p><b>Your visitor ID</b>: <i>{fingerprint.visitorId}</i></p>
+        }
+    </div>;
+}
+
+function Content() {
+    return <div className="container-fluid">
+        <FingerprintInfo/>
+    </div>
+}
 
 function App() {
     return <div className="container-fluid p-0">
         <Navbar/>
-        <h1>Hello World</h1>
-        <p>I'm hosted with GitHub Pages.</p>
+        <Content/>
     </div>;
 }
 
