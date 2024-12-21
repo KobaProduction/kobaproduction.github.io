@@ -1,5 +1,5 @@
 import React from "https://cdn.skypack.dev/react";
-import ReactDOM from "https://cdn.skypack.dev/react-dom";
+import {render} from "https://cdn.skypack.dev/react-dom";
 
 function App() {
     return <div>
@@ -8,4 +8,4 @@ function App() {
     </div>;
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+render(<App/>, document.getElementById('root'));
