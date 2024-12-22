@@ -1,0 +1,28 @@
+{
+  "links": [
+    {
+      "title": "Github",
+      "caption": "@KobaProduction",
+      "link": "https://github.com/KobaProduction",
+      "icon": "img:https://github.com/fluidicon.png"
+    },
+    {
+      "title": "Telegram Channel",
+      "caption": "@koba_production",
+      "link": "https://t.me/koba_production",
+      "icon": "img:https://telegram.org/img/website_icon.svg"
+    },
+    {
+      "title": "Telegram Chat",
+      "caption": "@koba_production_chat",
+      "link": "https://t.me/koba_production_chat",
+      "icon": "img:https://telegram.org/img/website_icon.svg"
+    },
+    {
+      "title": "Telegram Bot",
+      "caption": "@koba_production_bot",
+      "link": "https://t.me/koba_production_bot",
+      "icon": "img:https://telegram.org/img/website_icon.svg"
+    }
+  ]
+}
