@@ -23,7 +23,7 @@ if (typeof useWebAppViewport === 'function' && $q.platform.is.mobile) {
   useWebAppViewport().disableVerticalSwipes()
 }
 
-const isSidebarOpened = ref(true)
+const isSidebarOpened = ref(false)
 
 const toggleSidebar = () => isSidebarOpened.value = !isSidebarOpened.value
 
