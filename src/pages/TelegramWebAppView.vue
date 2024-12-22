@@ -16,7 +16,7 @@ if (app.initDataUnsafe.hash) {
 
 <template>
   <q-page class="q-pa-md">
-    <p class="text-h5">Telegram WebApp</p>
+    <p class="text-h5 q-mx-sm">Telegram WebApp</p>
     <p v-if="!isAvailable">Opened not in telegram app...</p>
 
     <div v-if="isAvailable && app.initDataUnsafe.user">
@@ -31,23 +31,9 @@ if (app.initDataUnsafe.hash) {
       <p v-if="app.initDataUnsafe.user.allows_write_to_pm !== undefined">
         Allowed write in private messages: {{ app.initDataUnsafe.user.allows_write_to_pm }}
       </p>
-      <q-separator class="q-separator"/>
+      <q-separator class="q-my-sm"/>
       <p>WebApp Link Auth Date: {{ new Date(app.initDataUnsafe.auth_date * 1000) }}</p>
       <p v-if="app.initDataUnsafe.start_param">Start param link: {{ app.initDataUnsafe.start_param }}</p>
     </div>
   </q-page>
 </template>
-
-<style scoped>
-.q-separator {
-  margin: .5em 0;
-}
-.text-h5 {
-  margin-block-start: .2em;
-  margin-block-end: .2em;
-}
-
-p {
-  margin: 0;
-}
-</style>
