@@ -34,13 +34,14 @@ const styles = computed(() => Dark.isActive?  "text-white bg-dark" : "text-dark 
 </script>
 
 <template>
-  <q-layout view="lHh lpR lll" :class="styles">
+  <q-layout view="hHh lpr lFr" :class="styles">
     <HeaderView @on-sidebar-toggle="toggleSidebar"/>
     <q-drawer
       v-model="isSidebarOpened"
       side="left"
       :behavior="$q.platform.is.mobile ? 'mobile' : 'desktop'"
-      elevated
+      bordered
+      overlay
     >
       <SidebarView/>
     </q-drawer>
