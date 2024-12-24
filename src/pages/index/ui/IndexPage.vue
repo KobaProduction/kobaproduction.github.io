@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { showBackground } from "components/background"
+import { showBackground } from "./background"
 import { onMounted } from 'vue'
 
 
