@@ -28,7 +28,7 @@ if (typeof useWebAppViewport === 'function' && useQuasar().platform.is.mobile) {
 }
 
 const styles = computed(() => Dark.isActive ? 'text-white bg-dark' : 'text-dark bg-white')
-const layout = computed(() => useRoute().meta.layout || DefaultLayout)
+const layout = computed(() => useRoute()?.meta?.layout || DefaultLayout)
 
 </script>
 
