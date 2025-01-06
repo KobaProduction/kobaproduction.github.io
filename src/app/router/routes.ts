@@ -1,18 +1,20 @@
 import type {RouteRecordRaw} from 'vue-router';
-import { EmptyLayout } from '../../shared/ui/layouts'
+import { EmptyLayout } from '@/app/ui/layouts'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/', component: () => import('pages/index')
+    path: '/',
+    name: 'index',
+    component: () => import('pages/index')
   },
   {
     path: '/fp-info',
-    name: 'Fingerprints Info',
+    name: 'fp-info',
     component: () => import('pages/FingerprintsPage.vue'),
   },
   {
     path: '/tg-webapp-info',
-    name: 'Telegram WebApp',
+    name: 'tg-webapp-info',
     component: () => import('pages/TelegramWebAppView.vue'),
   },
   {
