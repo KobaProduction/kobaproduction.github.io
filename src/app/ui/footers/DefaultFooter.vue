@@ -1,4 +1,4 @@
-<script setup lang="ts"></script>
+<script setup lang="ts" />
 
 <template>
   <q-footer bordered class="footer">
@@ -22,6 +22,7 @@
   background-color: inherit;
   color: inherit;
 }
+
 a {
   color: inherit;
 }

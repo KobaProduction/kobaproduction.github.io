@@ -5,11 +5,12 @@ import { Dark, useQuasar } from 'quasar'
 
 import { useWebApp, useWebAppViewport } from 'vue-tg'
 
-import appStore from 'src/app/stores/store'
-import HeaderSlot from '@/shared/ui/HeaderSlot.vue'
-import FooterSlot from '@/shared/ui/FooterSlot.vue'
-import SidebarSlot from '@/shared/ui/SidebarSlot.vue'
-import { DefaultLayout } from '../shared/ui/layouts'
+import appStore from '@/app/stores/store'
+import { DefaultHeader } from '@/app/ui/headers'
+import { DefaultSidebar } from '@/app/ui/sidebars'
+import { DefaultFooter } from '@/app/ui/footers'
+import { DefaultLayout } from '@/app/ui/layouts'
+
 
 const store = appStore()
 const tgWebApp = useWebApp()
@@ -42,7 +43,7 @@ const layout = computed(() => route.meta.layout || DefaultLayout)
     <component :is="layout" :styles="styles">
 
       <template v-slot:header>
-        <HeaderSlot @on-sidebar-toggle="toggleSidebar" />
+        <DefaultHeader @on-sidebar-toggle="toggleSidebar" />
       </template>
 
       <template v-slot:sidebar>
@@ -53,7 +54,7 @@ const layout = computed(() => route.meta.layout || DefaultLayout)
           bordered
           overlay
         >
-          <SidebarSlot/>
+          <DefaultSidebar />
         </q-drawer>
       </template>
 
@@ -64,7 +65,7 @@ const layout = computed(() => route.meta.layout || DefaultLayout)
       </template>
 
       <template v-slot:footer>
-        <FooterSlot />
+        <DefaultFooter />
       </template>
     </component>
   </div>
