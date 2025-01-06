@@ -1,29 +1,21 @@
 <script setup lang="ts">
-
+import { RouterButton } from '@/shared/ui/buttons/router'
 </script>
 
 <template>
-<!--  <div-->
-<!--    class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"-->
-<!--  >-->
+  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
     <div>
-      <div style="font-size: 30vh">404</div>
-
-      <div class="text-h2" style="opacity: 0.4">
-        Oops. Nothing here...
-      </div>
-
-      <q-btn
+      <div style="font-size: 10vh">404</div>
+      <div class="text-h2" style="opacity: 0.4">{{$t('oopsNothingHere')}}</div>
+      <RouterButton
         class="q-mt-xl"
         color="white"
         text-color="blue"
         unelevated
-        to="/"
-        label="Go Home"
+        router-record-name="index"
+        :label="$t('goToIndexPage')"
         no-caps
       />
     </div>
-<!--  </div>-->
+  </div>
 </template>
-
-
