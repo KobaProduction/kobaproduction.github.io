@@ -1,10 +1,7 @@
-interface LanguageKeys {
-    [key: string]: string;
+const ruRU = {
+  basedOn: 'Основано на',
+  oopsNothingHere: 'Уупс. Тут ничего нет...',
+  goToIndexPage: 'Вернуться на главную',
 }
 
-const ruRU: LanguageKeys = {
-    greeting: 'Здравствуйте',
-    goodbye: 'Досвидания',
-};
-
-export default ruRU;
+export default ruRU

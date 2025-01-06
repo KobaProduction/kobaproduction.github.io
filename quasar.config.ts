@@ -16,7 +16,9 @@ const devServer = USE_DEV_HTTPS ? {
 
 export default defineConfig(() => {
   return {
-    // boot: ['axios', 'telegramHapticFeedback'],
+    boot: [
+      '~src/app/boot/i18n',
+    ],
 
     extras: [
       // 'ionicons-v4',

@@ -1,10 +1,7 @@
-interface LanguageKeys {
-    [key: string]: string;
+const enUS = {
+  basedOn: 'Based On',
+  oopsNothingHere: 'Oops. Nothing here...',
+  goToIndexPage: 'Go to index page',
 }
 
-const enUS: LanguageKeys = {
-    greeting: 'Hello',
-    goodbye: 'Goodbye',
-};
-
-export default enUS;
+export default enUS
