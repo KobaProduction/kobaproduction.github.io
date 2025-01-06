@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import appStore from '@/app/stores/store'
+import { RouterButton } from '@/shared/ui/buttons/router'
 
 const store = appStore()
 
@@ -18,7 +19,7 @@ const store = appStore()
         </q-avatar>
         Koba Production
       </q-toolbar-title>
-      <q-btn tag="router-link" :to="{ path: '/' }" dense flat round icon="home" />
+      <RouterButton router-record-name="index" dense flat round icon="home" />
     </q-toolbar>
   </q-header>
 </template>
