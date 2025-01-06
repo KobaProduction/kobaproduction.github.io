@@ -5,9 +5,8 @@
     <q-toolbar>
       <q-toolbar-title>
         <p class="text-caption text-center q-ma-none">
-          Based on <a target="_blank" href="https://quasar.dev/">Quasar</a>
-          |
-          Dev: <a target="_blank" href="https://github.com/ArthurKoba">Arthur Koba</a>
+          {{ $t('basedOn') }} <a target="_blank" href="https://quasar.dev/">Quasar</a> | Dev:
+          <a target="_blank" href="https://github.com/ArthurKoba">Arthur Koba</a>
           |
           <a target="_blank" href="https://github.com/KobaProduction">Koba Production</a>
           &copy; {{ new Date().getFullYear() }}
