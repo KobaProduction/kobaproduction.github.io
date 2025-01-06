@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { Dark, useQuasar } from 'quasar'
 
@@ -22,15 +22,10 @@ tgWebApp.onEvent('themeChanged', () => {
   // todo release change theme from tg event, and set tg colors to quasar css
 })
 
-const quasar = useQuasar()
 
-if (typeof useWebAppViewport === 'function' && quasar.platform.is.mobile) {
+if (typeof useWebAppViewport === 'function' && useQuasar().platform.is.mobile) {
   useWebAppViewport().disableVerticalSwipes()
 }
-
-const isSidebarOpened = ref(false)
-
-const toggleSidebar = () => {isSidebarOpened.value = !isSidebarOpened.value}
 
 const styles = computed(() => Dark.isActive ? 'text-white bg-dark' : 'text-dark bg-white')
 
@@ -39,35 +34,25 @@ const layout = computed(() => route.meta.layout || DefaultLayout)
 </script>
 
 <template>
-  <div :class="styles">
-    <component :is="layout" :styles="styles">
+  <component :is="layout" :styles="styles">
 
-      <template v-slot:header>
-        <DefaultHeader @on-sidebar-toggle="toggleSidebar" />
-      </template>
+    <template v-slot:header>
+      <DefaultHeader />
+    </template>
 
-      <template v-slot:sidebar>
-        <q-drawer
-          v-model="isSidebarOpened"
-          side="left"
-          :behavior="quasar.platform.is.mobile ? 'mobile' : 'desktop'"
-          bordered
-          overlay
-        >
-          <DefaultSidebar />
-        </q-drawer>
-      </template>
+    <template v-slot:sidebar>
+      <DefaultSidebar />
+    </template>
 
-      <template v-slot:page>
-        <q-page-container>
-          <router-view />
-        </q-page-container>
-      </template>
+    <template v-slot:page>
+      <q-page-container>
+        <router-view />
+      </q-page-container>
+    </template>
 
-      <template v-slot:footer>
-        <DefaultFooter />
-      </template>
-    </component>
-  </div>
+    <template v-slot:footer>
+      <DefaultFooter />
+    </template>
+  </component>
 </template>
 

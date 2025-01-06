@@ -1,30 +1,30 @@
 import { defineStore } from 'pinia'
-import type { Settings } from './models'
+import type { AppSettings, AppStates } from './models'
 
 const appStore = defineStore('appStore', {
   state: () => ({
-    settings: <Settings>{
+    states: <AppStates>{
+      sidebarOpened: false
+    },
+    settings: <AppSettings>{
       darkAuto: false,
       darkTheme: false,
       vibration: false,
-      lang: '',
-    },
-    userData: {
-      jwt: '',
-    },
+      lang: 'en'
+    }
   }),
   actions: {
-    setJwt(value: string) {
-      this.userData.jwt = value
+    toggleSidebar() {
+      this.states.sidebarOpened = !this.states.sidebarOpened
     },
-    setSettings(value: object) {
-      this.settings = value as Settings
-    },
+    setAppSettings(value: AppSettings) {
+      this.settings = value
+    }
   },
   persist: {
     debug: true,
-    storage: localStorage,
-  },
+    storage: localStorage
+  }
 })
 
 export default appStore
