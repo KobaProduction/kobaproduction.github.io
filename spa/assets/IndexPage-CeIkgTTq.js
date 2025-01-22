@@ -1,0 +1,1 @@
+import{f as e}from"./QBtn-PyTwz4Ob.js";import{Q as t}from"./QPage-BISrVURo.js";import{a3 as r,U as a,V as o,W as s,j as n}from"./index-DQgXli5a.js";import"./render-NM8Is2vZ.js";const c={};function f(i,m){return a(),o(t,{class:"row items-center justify-evenly"},{default:s(()=>[n(e,{to:"/fp-info",label:"FingerprintJS"})]),_:1})}const u=r(c,[["render",f]]);export{u as default};
